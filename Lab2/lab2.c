@@ -36,7 +36,7 @@ int main()
 
 void printAllInfo(struct stat *stat_buf, struct passwd *pswd, struct group *usr_gr, struct dirent *dir)
 {
-    lstat(dir->d_name, stat_buf);
+    stat(dir->d_name, stat_buf);
     pswd = getpwuid(stat_buf->st_uid);
     usr_gr = getgrgid(stat_buf->st_gid);
     printFileType(stat_buf->st_mode);
@@ -49,9 +49,6 @@ void printFileType(mode_t _mode)
 {
     switch (_mode & S_IFMT)
     {
-    case S_IFREG:
-        printf("f");
-        break;
     case S_IFBLK:
         printf("b");
         break;
