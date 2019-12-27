@@ -75,40 +75,13 @@ void printFileType(mode_t _mode)
 
 void printPerms(mode_t _mode)
 {
-    if(_mode & 0400)
-        printf("r");
-    else
-        printf("-");
-    if(_mode & 0200)
-        printf("w");
-    else
-        printf("-");
-    if(_mode & 0100)
-        printf("x");
-    else
-        printf("-");
-    if(_mode & 0040)
-        printf("r");
-    else
-        printf("-");
-    if(_mode & 0020)
-        printf("w");
-    else
-        printf("-");
-    if(_mode & 0010)
-        printf("x");
-    else
-        printf("-");
-    if(_mode & 0004)
-        printf("r");
-    else
-        printf("-");
-    if(_mode & 0002)
-        printf("w");
-    else
-        printf("-");
-    if(_mode & 0001)
-        printf("x");
-    else
-        printf("-");
+    printf((_mode & 0400)?"r":"-");
+    printf((_mode & 0200)?"w":"-");
+    printf((_mode & 0100)?"x":"-");
+    printf((_mode & 0040)?"r":"-");
+    printf((_mode & 0020)?"w":"-");
+    printf((_mode & 0010)?"x":"-");
+    printf((_mode & 0004)?"r":"-");
+    printf((_mode & 0002)?"w":"-");
+    printf((_mode & 0001)?"x":"-");
 }
